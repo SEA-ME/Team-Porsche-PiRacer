@@ -18,7 +18,7 @@ SEA:ME Pi Racer
 >> 2. Connect right direction the Camera
 
 ----------------
-# Set up Raspberry Pi
+# [Set up Raspberry Pi](https://docs.donkeycar.com/guide/robot_sbc/setup_raspberry_pi/)
 ## Install Raspberry Pi imager for set up Raspberry Pi
 - [Download Imager in link](https://www.raspberrypi.com/software/)
     - Follow OS specific guide
@@ -71,8 +71,65 @@ SEA:ME Pi Racer
 > But I don't recommend it. It's not like a programmer.
 
 ## Install & Set up Environment
-- Follow Step.6 to Step.12
-    - [Reference Link](https://docs.donkeycar.com/guide/robot_sbc/setup_raspberry_pi/#step-6-update-and-upgrade)
+- [Follow Step.6 to Step.12](https://docs.donkeycar.com/guide/robot_sbc/setup_raspberry_pi/#step-6-update-and-upgrade)
 
 --------------------
 
+# [Create Car Application](https://docs.donkeycar.com/guide/create_application/)
+## Create donkeycar from template
+- Create a set of files to control your Donkey with this command
+    - ```donkey createcar --path ~/mycar```
+    - You can also change your path something else instead of **"mycar"**
+
+## Configure I2C PCA9685
+- It's only for Raspberry Pi
+- ```sudo apt-get install -y i2c-tools``` -> install i2c-tools
+- ```sudo i2cdetect -y 1``` -> check your car
+
+    <img width="393" alt="image" src="https://user-images.githubusercontent.com/54701846/189234718-233d72a5-9cf3-419c-b821-ac962a1fbb91.png">  
+
+    - If you can't see 40  
+        1. On Pi, ensure I2C is enable in menu of ```sudo raspi-config```
+            - It suggest reboot
+        2. Check your hardwear
+            - Maybe your cable or Something wrong
+
+# Control with Web Controller & Gamepad
+
+## [Control using by Web Controller](https://www.waveshare.com/wiki/DonkeyCar_for_Pi-WEB_Control)
+- In terminal, follow commands
+    ```
+    pi@raspberrypi:~$ source ~/env/bin/activate
+    (env) pi@raspberrypi:~$ cd mycar/
+    (env) pi@raspberrypi:~/mycar$ python manage.py drive
+    ```
+- Open Chrome in host pc. Go to http://{RASPBERRY_PI_IP_ADDRESS}:8887
+- [Reference Link](https://www.waveshare.com/wiki/DonkeyCar_for_Pi-WEB_Control)
+
+## [Control using by Gamepad](https://www.waveshare.com/wiki/DonkeyCar_for_Pi-Teleoperation)
+- Connect the USB adapter of Gamepad to Raspberry Pi
+- In terminal, follow commands
+    ```
+    pi@raspberrypi:~$ source ~/env/bin/activate
+    (env) pi@raspberrypi:~$ cd mycar/
+    (env) pi@raspberrypi:~/mycar$ python manage.py drive --js
+    ```
+### Way to use Gamepad
+1. Use ```--js``` option
+    - Run donkeycar with this command  
+    ```python manage.py drive --js```  
+2. Modify myconfig.py file
+    - Find ```USE_JOYSTICK_AS_DEFAULT```
+    - Modify False to True  
+     ```USE_JOYSTICK_AS_DEFAULT = True```
+
+
+
+# Errors
+- Gamepad work different way
+
+<img width="620" alt="image" src="https://user-images.githubusercontent.com/54701846/189236256-e21e3799-4dd4-4b26-a228-09f43155f815.png">  
+
+- 7 & 8 is changed
+- Left and Right -> Left is forward and Right is backward
+- Front and Rear -> Front is right and Read is Left
