@@ -123,6 +123,13 @@ SEA:ME Pi Racer
     - Modify False to True  
      ```USE_JOYSTICK_AS_DEFAULT = True```
 
+# Display OLED pannel
+## Enable display in ```myconfig.py```
+- Find line ```USE_SSD1306_128_32``` removing ```#```
+- Find line ```SSD1306_RESOLUTION``` removing ```#```
+- example
+    <img width="541" alt="image" src="https://user-images.githubusercontent.com/54701846/189624796-23e749a9-c88f-42a4-bb8a-4c20d9deee7a.png">
+
 
 
 # Errors
