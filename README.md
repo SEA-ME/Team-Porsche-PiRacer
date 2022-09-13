@@ -130,7 +130,13 @@ SEA:ME Pi Racer
 - example  
     <img width="541" alt="image" src="https://user-images.githubusercontent.com/54701846/189624796-23e749a9-c88f-42a4-bb8a-4c20d9deee7a.png">
 
-
+# Tips
+## When you need to re-install Raspberry Pi
+- It should be occur this message
+![Image](https://user-images.githubusercontent.com/54701846/189970190-033abc35-dc00-44fb-99fc-f37fde48b53d.png)
+- follow this code to reset ssh-key 
+    - ```ssh-keygen -R {IP_ADDRESS}```
+    - IP_ADDRESS => Raspberry Pi's IP address
 
 # Errors
 - Gamepad work different way
