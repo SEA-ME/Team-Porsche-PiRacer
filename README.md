@@ -3,9 +3,16 @@ SEA:ME Pi Racer
 # Table of Contents
 - [Assemble Pi Racer](#assemble-pi-racer)  
 - [Setup Raspberry Pi](#setup-raspberry-pi)  
-    - [Connect PC & Raspberry Pi with Putty](#connect-pc--raspberry-pi-with-putty)
-    - [Set up Raspberry Pi with Wiki](#set-up-raspberry-pi-with-wiki)
-    - [Errors](#errors)
+  - [Write Image on Raspberry Pi](#write-image-on-raspberry-pi)
+  - [Enable SSH](#enable-ssh)
+  - [Find and Connect Raspberry Pi](#find--connect-raspberry-pi)
+  - [Install and Set up Environment](#install--set-up-environment)
+- [Create car application](#create-car-application)
+- [Control car using by Web Controller](#control-using-by-web-controller)
+- [Control car using by Gamepad](#control-using-by-gamepad)
+- [Display OLED panel](#display-oled-pannel)
+- [Tips](#tips)
+- [Errors](#errors)
 
 ----------------------------------------
 
@@ -19,12 +26,15 @@ SEA:ME Pi Racer
 
 ----------------
 # [Set up Raspberry Pi](https://docs.donkeycar.com/guide/robot_sbc/setup_raspberry_pi/)
-## Install Raspberry Pi imager for set up Raspberry Pi
-- [Download Imager in link](https://www.raspberrypi.com/software/)
-    - Follow OS specific guide
 
 ## Write Image on Raspberry Pi  
 
+### Install Raspberry Pi imager for set up Raspberry Pi
+- [Download Imager in link](https://www.raspberrypi.com/software/)
+    - Follow OS specific guide
+### [Download Image file](https://docs.donkeycar.com/guide/robot_sbc/setup_raspberry_pi/#step-1-flash-operating-system)
+- Click this link  
+    <img width="289" alt="image" src="https://user-images.githubusercontent.com/54701846/191256868-c60b590c-b9d1-4edd-84e4-cca7b37ef106.png">
 ###  Write downloaded Image on SD card
 <img width="500" alt="image" src="https://user-images.githubusercontent.com/54701846/189227237-70456b2e-9adb-448b-a854-5b353e1934ef.png">  
   
